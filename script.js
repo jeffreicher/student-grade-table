@@ -170,7 +170,7 @@ function addStudentCall(student) {
       grade: Number(student.grade)
     },
     method: 'POST',
-    url: '/students/add',
+    url: 'https://sgt-back.herokuapp.com/students/add',
     success: function(response) {
       if (response.success) {
         repopulateServerData()
@@ -223,7 +223,7 @@ function deleteStudent(studentObj, studentRow) {
         student_id: studentObj.student_id
       },
       method: 'POST',
-      url: '/students/delete',
+      url: 'https://sgt-back.herokuapp.com/students/delete',
       success: function(response) {
         if (response.success) {
           removeStudent(studentObj)
@@ -252,7 +252,7 @@ function updateStudent(studentObj) {
       grade: $('.new-grade').val()
     },
     method: 'POST',
-    url: '/students/update',
+    url: 'https://sgt-back.herokuapp.com/students/update',
     success: function(response) {
       if (response.success) {
         repopulateServerData()
@@ -385,7 +385,7 @@ function recieveServerData() {
   $.ajax({
     dataType: 'json',
     method: 'GET',
-    url: '/students',
+    url: 'https://sgt-back.herokuapp.com/students',
     success: function(result) {
       if (result.success) {
         for (var i = 0; i < result.data.rows.length; i++) {
@@ -411,7 +411,7 @@ function repopulateServerData() {
   $.ajax({
     dataType: 'json',
     method: 'GET',
-    url: '/students',
+    url: 'https://sgt-back.herokuapp.com/students',
     success: function(result) {
       console.log(result)
       if (result.success) {
