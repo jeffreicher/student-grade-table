@@ -1,63 +1,107 @@
 .submit-buttons {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .popover-content {
-    color: #e71d1d;
+  color: #e71d1d;
 }
 
 .highlight {
-    display: inline-block;
-    background-color: yellow;
+  display: inline-block;
+  background-color: yellow;
 }
 
 .update-button {
-    margin-right: 2vh;
+  margin-right: 2vh;
 }
 
 .modal-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .first {
-    margin-top: 2vh;
+  margin-top: 2vh;
 }
 
+.loading-left {
+  padding-right: 0 !important;
+  text-align: right;
+}
+
+.loading-right {
+  padding-left: 0 !important;
+  text-align: left;
+}
+
+.dot {
+  display: inline;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  position: relative;
+  top: -0.9em;
+  font-size: 3.5em;
+  animation: showHideDot 2.5s ease-in-out infinite;
+}
+
+.one {
+  animation-delay: 0.2s;
+}
+.two {
+  animation-delay: 0.4s;
+}
+.three {
+  animation-delay: 0.6s;
+}
+
+@keyframes showHideDot {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 @media (max-width: 992px) {
-    .submit-buttons {
-        margin-bottom: 4vh;
-    }
+  .submit-buttons {
+    margin-bottom: 4vh;
+  }
 }
 
 @media (max-width: 500px) {
-    .page-header {
-        padding-bottom: 30px !important;
-    }
+  .page-header {
+    padding-bottom: 30px !important;
+  }
 
-    h3 > small {
-        margin-top: 1vh;
-    }
+  h3 > small {
+    margin-top: 1vh;
+  }
 
-    .table>thead>tr>th, 
-    .table>tbody>tr>th, 
-    .table>tfoot>tr>th, 
-    .table>thead>tr>td, 
-    .table>tbody>tr>td, 
-    .table>tfoot>tr>td {
-        padding-left: 0px !important;
-    }
+  .table > thead > tr > th,
+  .table > tbody > tr > th,
+  .table > tfoot > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > td {
+    padding-left: 0px !important;
+  }
 }
 
 @media (max-width: 320px) {
-    .student-list-container {
-        padding-left: 0 !important;
-    }
+  .student-list-container {
+    padding-left: 0 !important;
+  }
 
-    .student-list-container > table {
-        float: none !important;        
-    }   
+  .student-list-container > table {
+    float: none !important;
+  }
 }

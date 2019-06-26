@@ -382,12 +382,14 @@ function removeStudent(studentObj) {
  * @returns: {undefined} none
  */
 function recieveServerData() {
+  $('.loading-dots').show()
   $.ajax({
     dataType: 'json',
     method: 'GET',
     url: 'https://sgt-back.herokuapp.com/students',
     success: function(result) {
       if (result.success) {
+        $('.loading-dots').hide()
         for (var i = 0; i < result.data.rows.length; i++) {
           student_array.push(result.data.rows[i])
           updateStudentList(student_array)
@@ -396,6 +398,7 @@ function recieveServerData() {
     },
     error: function(response) {
       console.log(response)
+      $('.loading-dots').hide()
     }
   })
 }
